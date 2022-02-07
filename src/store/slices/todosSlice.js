@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-import {addTodo, changeTodoStatus, deleteTodo, fetchTodos, restoreTodo} from "../thunks/todoThunks";
+import {addTodo, changeTodoStatus, fetchTodos} from "../thunks/todoThunks";
 
 const initialState = {
     todos: [],
