@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import Layout from "./components/UI/Layout/Layout";
 import {Route, Routes} from "react-router-dom";
@@ -8,7 +8,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import {useDispatch, useSelector} from "react-redux";
 import Login from "./components/Login/Login";
 import MyTodos from "./pages/MyTodos/MyTodos";
-import {authThunk, testThunk} from "./store/thunks/authThunks";
+import {authThunk} from "./store/thunks/authThunks";
 import Spinner from "./components/UI/Spinner/Spinner";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         if (localStorage.getItem('token') && !isAuth) {
             dispatch(authThunk())
         }
-    }, [])
+    }, [dispatch, isAuth])
 
     return (
         <Layout>

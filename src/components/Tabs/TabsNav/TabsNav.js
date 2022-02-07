@@ -30,7 +30,7 @@ const TabsNav = () => {
             })
         })
         setNavItemsData(navItemsArray)
-    }, [statusesList, todosQuantity])
+    }, [statusesList, todosQuantity, params])
 
 
     const onChangeIsActiveHandler = (id) => {

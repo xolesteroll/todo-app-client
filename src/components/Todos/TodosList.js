@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 import TodoItem from "./TodoItem/TodoItem";
 import {Link, useParams} from "react-router-dom";
-import {changeTodoStatus, deleteTodo, fetchTodos, restoreTodo} from "../../store/thunks/todoThunks";
+import {changeTodoStatus, fetchTodos} from "../../store/thunks/todoThunks";
 import formatDateForDaysCounter from "../../helpers/formatDateForDaysCounter";
 
 import s from './TodosList.module.css'
