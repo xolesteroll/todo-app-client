@@ -117,26 +117,6 @@ export const authThunk = createAsyncThunk(
     }
 )
 
-export const testThunk = createAsyncThunk(
-    'auth/Test',
-    async (data) => {
-        try {
-            const response = await fetch(`${baseURl}/auth/test`, {
-                headers: {
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "*"
-                }
-            })
-            const responseData = await response.json()
-            console.log(responseData)
-
-        } catch (e) {
-            return {
-                error: "Server is unavailable"
-            }
-        }
-    }
-)
 
 
 
