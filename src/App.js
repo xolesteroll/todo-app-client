@@ -16,15 +16,14 @@ function App() {
     const isFetching = useSelector(state => state.auth.isFetching)
     const dispatch = useDispatch()
 
-    // useEffect(() => {
-    //     if (localStorage.getItem('token') && !isAuth) {
-    //         dispatch(authThunk())
-    //     }
-    // }, [])
+    useEffect(() => {
+        if (localStorage.getItem('token') && !isAuth) {
+            dispatch(authThunk())
+        }
+    }, [])
 
     return (
         <Layout>
-            <button onClick={() => dispatch(testThunk())}>test</button>
             {isFetching ? <Spinner/> : <Routes>
                 {isAuth &&
                 <>
