@@ -44,6 +44,10 @@ const TodoItem = React.memo(({
         setShowModal(false)
     }
 
+    const onMouseLeaveEditModeHandler = () => {
+        setEditStatusMode(false)
+    }
+
     const currentStatusColor = statusesList.find(s => s.id === status).color
     const oldStatusColor = statusesList.find(s => s.id === oldStatus).color
 
@@ -81,7 +85,7 @@ const TodoItem = React.memo(({
                 onSubmit={!deleted ? () => onRemoveTodo(id, status) : () => onRestoreTodo(id, oldStatus)}
                 onClose={modalCloseHandler}
             />}
-            <li className={c.listItem}>
+            <li className={c.listItem} onMouseLeave={onMouseLeaveEditModeHandler}>
                 <h3 className={c.listItemTitle}>{title}</h3>
                 <p className={c.listItemDescription}>{description}</p>
                 {
