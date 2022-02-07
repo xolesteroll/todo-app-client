@@ -1,0 +1,19 @@
+.tabsNavItem {
+    max-width: 100%;
+    width: 100%;
+    min-height: 50px;
+    text-align: center;
+    padding: 20px 0;
+    border: 1px solid #000000;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s, background-color 0.2s;
+}
+
+.tabsNavItem.active {
+    color: #ffffff;
+}
+
+.tabsNavItem + .tabsNavItem{
+    border-left: none;
+}

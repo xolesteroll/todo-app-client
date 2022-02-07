@@ -1,0 +1,14 @@
+.myButton {
+    cursor: pointer;
+    width: fit-content;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-family: "BalsamiqSans Regular", sans-serif;
+    font-size: 18px;
+    transition: padding 0.2s, background-color 0.3s;
+}
+
+.myButton.paddingAnimated:hover {
+    padding: 5px 16px 11px 10px;
+}

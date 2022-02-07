@@ -1,0 +1,29 @@
+
+@font-face {
+    font-family: 'BalsamiqSans Bold';
+    src: local('BalsamiqSans Bold'), url('./assets/fonts/BalsamiqSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BalsamiqSans Regular';
+    src: local('BalsamiqSans Regular'), url('./assets/fonts/BalsamiqSans-Regular.ttf') format('truetype');
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-size: 18px;
+    font-family: "BalsamiqSans Regular", sans-serif;
+}
+
+ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
