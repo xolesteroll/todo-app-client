@@ -10,6 +10,7 @@ import Login from "./components/Login/Login";
 import MyTodos from "./pages/MyTodos/MyTodos";
 import {authThunk} from "./store/thunks/authThunks";
 import Spinner from "./components/UI/Spinner/Spinner";
+import MyAccount from "./pages/MyAccount/MyAccount";
 
 function App() {
     const isAuth = useSelector(state => state.auth.isAuth)
@@ -32,6 +33,7 @@ function App() {
                     <Route path="/my-todos" element={<MyTodos/>}>
                         <Route path=":statusFilter" element={<MyTodos/>}/>
                     </Route>
+                    <Route path="/my-account" element={<MyAccount/>}/>
                 </>}
                 {!isAuth &&
                 <>
