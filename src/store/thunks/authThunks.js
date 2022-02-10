@@ -17,7 +17,6 @@ export const loginThunk = createAsyncThunk(
                 }
             })
             const responseData = await response.json()
-            console.log(responseData)
             if (responseData.token) {
                 localStorage.setItem('token', responseData.token)
                 return {
@@ -29,7 +28,7 @@ export const loginThunk = createAsyncThunk(
                 }
             } else {
                 return {
-                    error: "Server is unavailable"
+                    error: responseData.error
                 }
             }
         } catch (e) {
@@ -82,7 +81,7 @@ export const registerThunk = createAsyncThunk(
 )
 export const authThunk = createAsyncThunk(
     'auth/Auth',
-    async (data) => {
+    async () => {
         try {
             const authString = `Bearer ${localStorage.getItem('token')}`
             const response = await fetch(`${baseURl}/auth/auth`, {
@@ -93,7 +92,7 @@ export const authThunk = createAsyncThunk(
                 }
             })
             const responseData = await response.json()
-            if (responseData.message !== 'jwt expired' && responseData.message !== 'jwt malformed') {
+            if (responseData.error !== 'jwt expired' && responseData.error !== 'jwt malformed') {
                 localStorage.setItem('token', responseData.token)
                 return {
                     id: responseData.user.id,
@@ -105,7 +104,7 @@ export const authThunk = createAsyncThunk(
             } else {
                 localStorage.removeItem('token')
                 return {
-                    error: responseData.message
+                    error: "Your authorization token has expired, please log in"
                 }
             }
 

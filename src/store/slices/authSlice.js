@@ -68,6 +68,7 @@ const authSlice = createSlice({
             state.isFetching = true
         },
         [authThunk.fulfilled]: (state, {payload}) => {
+            debugger
             authDataSetter(state, payload)
             state.isFetching = false
         }
