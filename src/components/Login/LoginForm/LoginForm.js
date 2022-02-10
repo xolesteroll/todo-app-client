@@ -70,7 +70,6 @@ const LoginForm = ({
                     bgColor="#82b1ff"
                     hoverColor="#000000"
                     text={isLogin ? "Login" : "Register"}
-                    paddingOnHover
                     type="submit"/>
                 <p>or</p>
                 <MyButton
@@ -78,7 +77,6 @@ const LoginForm = ({
                     color="#ffffff"
                     bgColor="#6fdd8f"
                     hoverColor="#000000"
-                    paddingOnHover
                     text={isLogin ? "Create new account" : "Login with existing account"}/>
 
             </div>
